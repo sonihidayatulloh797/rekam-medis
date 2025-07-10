@@ -20,4 +20,15 @@ class User extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role_display()
+    {
+        return match($this->role) {
+            1 => 'Admin',
+            2 => 'Petugas Registrasi',
+            3 => 'Dokter',
+            4 => 'Petugas Obat',
+            default => 'Tidak Diketahui',
+        };
+    }
 }
