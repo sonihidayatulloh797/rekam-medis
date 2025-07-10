@@ -19,7 +19,7 @@ class PasienController extends Controller
         if ($request->ajax()) {
             return DataTables::of(Pasien::query())
                     ->addColumn('action',function($data){
-                        $button = '<a href="javascript:void(0)" 
+                        $button = '<a href="javascript:void(0)"
                             data-id="'.$data->id.'"
                             data-nama="'.$data->nama.'"
                             data-no="'.$data->no_rm.'"
@@ -32,7 +32,7 @@ class PasienController extends Controller
         }
         return DataTables::of(Pasien::query())
         ->addColumn('action',function($data){
-            $button = '<a href="javascript:void(0)" 
+            $button = '<a href="javascript:void(0)"
                 data-id="'.$data->id.'"
                 data-nama="'.$data->nama.'"
                 data-no="'.$data->no_rm.'"
@@ -87,7 +87,8 @@ class PasienController extends Controller
             $extension = $request->file('file')->getClientOriginalExtension();
             $fileName = $pasien->no_rm.'.'.$extension;
             $request->file('file')->move('images/pasien/',$fileName);
-            $pasien->general_uncent = $fileName;
+            // $pasien->general_uncent = $fileName;
+            $pasien->general_consent = $fileName;
             $pasien->save();
         }
 
@@ -130,7 +131,7 @@ class PasienController extends Controller
             PengeluaranObat::where('pasien_id',$id)->delete();
        }
         return redirect()->route('pasien')->with('sukses','Data berhasil dihapus');
-    } 
+    }
 
     function getLastRM(Request $request)
     {
@@ -159,7 +160,7 @@ class PasienController extends Controller
                 ],400);
             }
         }
-            
+
         return response()->json([ 'success' => false],400);
     }
 }
