@@ -69,7 +69,7 @@
                         style="display: block;">{{$message}}</div>
                         @enderror
                     </div>
-                    
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">BUAT</button>
                     </div>
@@ -105,7 +105,7 @@
                     <table  class="table table-responsive-md">
                         <thead>
                             <tr>
-                                
+
                                 <th>No</th>
                                 <th>NIP</th>
                                 <th>Nama Dokter</th>
@@ -130,7 +130,7 @@
                                     <td>{{$row->status_display()}}</td>
                                     <td>
                                         <div class="d-flex">
-                                            <a href="javascript:void(0)" data-toggle="modal" data-target="#key{{$row->user_id}}" 
+                                            <a href="javascript:void(0)" data-toggle="modal" data-target="#key{{$row->user_id}}"
                                                 class="btn btn-warning shadow btn-xs sharp mr-1"><i class="fa fa-key"></i></a>
 
                                             <a href="javascript:void(0)" data-toggle="modal" data-target="#edit{{$row->id}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
@@ -146,9 +146,9 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <form action="{{Route('dokter.gantipassword',$row->user_id)}}" method="POST">
+                                                            <form action="{{ Route('dokter.gantipassword', optional($row)->user_id ?? 0) }}" method="POST">
                                                                 {{ csrf_field() }}
-                                                               
+
                                                                 <div class="form-group">
                                                                     <label class="text-black font-w500">Password Baru*</label>
                                                                     <input type="password" name="password"
@@ -168,7 +168,7 @@
                                                                     style="display: block;">{{$message}}</div>
                                                                     @enderror
                                                                 </div>
-                                                                
+
                                                                 <div class="form-group">
                                                                     <button type="submit" class="btn btn-primary">GANTI PASSWORD</button>
                                                                 </div>
@@ -211,7 +211,7 @@
                                                                         @foreach ($poli as $item)
                                                                             @if ($item->nama == $row->poli)
                                                                                 <option value="{{$item->nama}}" selected>{{$item->nama}}</option>
-                                                                            @else 
+                                                                            @else
                                                                                 <option value="{{$item->nama}}">{{$item->nama}}</option>
                                                                             @endif
                                                                         @endforeach
@@ -229,7 +229,7 @@
                                                                     style="display: block;">{{$message}}</div>
                                                                     @enderror
                                                                 </div>
-                                                               
+
                                                                 <div class="form-group">
                                                                     <label class="text-black font-w500">Alamat</label>
                                                                     <textarea name="alamat" class="form-control" id="alamat" cols="30" rows="3">{{$row->alamat}}</textarea>
@@ -238,7 +238,7 @@
                                                                     style="display: block;">{{$message}}</div>
                                                                     @enderror
                                                                 </div>
-                                                                
+
                                                                 <div class="form-group">
                                                                     <button type="submit" class="btn btn-primary">UPDATE</button>
                                                                 </div>
@@ -252,7 +252,7 @@
                                 </tr>
                             @endforeach
                         </tbody>
-                        
+
                     </table>
                 </div>
             </div>
