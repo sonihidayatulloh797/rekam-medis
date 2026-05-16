@@ -56,7 +56,7 @@ class ObatController extends Controller
             'nama' => 'required|unique:obat',
             'satuan' => 'required',
             'harga' => 'required|numeric',
-            'stok' => 'required|numeric',
+            'stock' => 'required|numeric',
         ]);
         Obat::create($request->all());
         return redirect()->route('obat')->with('sukses','Data berhasil ditambahkan');

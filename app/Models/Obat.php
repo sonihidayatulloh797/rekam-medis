@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Obat extends Model
 {
     protected $table = "obat";
-    protected $fillable = ["kd_obat","nama","satuan","stok","foto","harga","is_bpjs","deleted_at"];
+    protected $fillable = ["kd_obat","nama","satuan","stock","foto","harga","is_bpjs","deleted_at"];
 }

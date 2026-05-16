@@ -30,7 +30,31 @@ class DummyDiagnosaSeeder extends Seeder
         // Pasien
         $pasienId = DB::table('pasien')->insertGetId([
             'no_rm' => 'RM001',
-            'nama' => 'Pasien Dummy',
+            'nama' => 'Pasien 1',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        $pasienId = DB::table('pasien')->insertGetId([
+            'no_rm' => 'RM002',
+            'nama' => 'Pasien 2',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        $pasienId = DB::table('pasien')->insertGetId([
+            'no_rm' => 'RM003',
+            'nama' => 'Pasien 3',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);        
+        $pasienId = DB::table('pasien')->insertGetId([
+            'no_rm' => 'RM004',
+            'nama' => 'Pasien 4',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        $pasienId = DB::table('pasien')->insertGetId([
+            'no_rm' => 'RM005',
+            'nama' => 'Pasien 5',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
